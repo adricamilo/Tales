@@ -49,12 +49,11 @@ public class TalesAhora extends Application {
         lbDistance.setFont(timesIt);
         lbHeight.setFont(timesIt);
 
-        Image image = new Image("draft.png"); // need to put actual picture
+        Image image = new Image("graph_ahora.png");
 
         imageView.setImage(image);
         imageView.setPreserveRatio(true);
         imageView.setFitWidth(500);
-        imageView.setFitHeight(300);
 
         btCalculate.setOnAction(e -> updateHeight());
 
@@ -89,12 +88,14 @@ public class TalesAhora extends Application {
         borderPane.setBottom(gridPane);
         borderPane.setPadding(new Insets(5));
 
-        Scene scene = new Scene(borderPane, 500, 400);
+        Scene scene = new Scene(borderPane, 600, 400);
         primaryStage.setTitle("Tales en la Actualidad");
         primaryStage.getIcons().add(new Image("icono_tales.jpg"));
         primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
+        primaryStage.setMinWidth(530);
         primaryStage.show();
+        primaryStage.setMinHeight(imageView.getBoundsInLocal().getHeight()
+                + gridPane.getBoundsInLocal().getHeight() + 50);
     }
 
     private void updateHeight() {
