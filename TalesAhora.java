@@ -40,7 +40,6 @@ public class TalesAhora extends Application {
         lbDistance.setLabelFor(tfDistance);
 
         Font bigger = Font.font(14);
-        Font times = Font.font("Times New Roman", FontWeight.NORMAL, FontPosture.REGULAR, 16);
         Font timesIt = Font.font("Times New Roman", FontWeight.NORMAL, FontPosture.ITALIC, 16);
         btCalculate.setFont(bigger);
         tfTheta.setFont(bigger);
@@ -53,7 +52,7 @@ public class TalesAhora extends Application {
 
         imageView.setImage(image);
         imageView.setPreserveRatio(true);
-        imageView.setFitWidth(500);
+        imageView.setFitHeight(300);
 
         btCalculate.setOnAction(e -> updateHeight());
 
@@ -92,10 +91,10 @@ public class TalesAhora extends Application {
         primaryStage.setTitle("Tales en la Actualidad");
         primaryStage.getIcons().add(new Image("icono_tales.jpg"));
         primaryStage.setScene(scene);
-        primaryStage.setMinWidth(530);
         primaryStage.show();
+        primaryStage.setMinWidth(imageView.getBoundsInLocal().getWidth() + 30);
         primaryStage.setMinHeight(imageView.getBoundsInLocal().getHeight()
-                + gridPane.getBoundsInLocal().getHeight() + 50);
+                + gridPane.getBoundsInLocal().getHeight() + 60);
     }
 
     private void updateHeight() {

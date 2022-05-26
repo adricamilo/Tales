@@ -42,7 +42,6 @@ public class TalesMetro extends Application {
         lbDistance.setLabelFor(tfDistance);
 
         Font bigger = Font.font(14);
-        Font times = Font.font("Times New Roman", FontWeight.NORMAL, FontPosture.REGULAR, 16);
         Font timesIt = Font.font("Times New Roman", FontWeight.NORMAL, FontPosture.ITALIC, 16);
         btCalculate.setFont(bigger);
         tfOpposite.setFont(bigger);
@@ -53,11 +52,10 @@ public class TalesMetro extends Application {
         lbDistance.setFont(timesIt);
         lbHeight.setFont(timesIt);
 
-        Image image = new Image("draft.png"); // need to put actual picture
+        Image image = new Image("graph_metro.png");
 
         imageView.setImage(image);
         imageView.setPreserveRatio(true);
-        imageView.setFitWidth(500);
         imageView.setFitHeight(300);
 
         btCalculate.setOnAction(e -> updateHeight());
@@ -101,13 +99,15 @@ public class TalesMetro extends Application {
         borderPane.setBottom(gridPane);
         borderPane.setPadding(new Insets(5));
 
-        Scene scene = new Scene(borderPane, 500, 410);
+        Scene scene = new Scene(borderPane, 600, 400);
         primaryStage.setTitle(new StringBuilder().append("Tales con un flex")
                 .append(Character.toString(243)).append("metro").toString());
         primaryStage.getIcons().add(new Image("icono_tales.jpg"));
         primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
         primaryStage.show();
+        primaryStage.setMinWidth(imageView.getBoundsInLocal().getWidth() + 30);
+        primaryStage.setMinHeight(imageView.getBoundsInLocal().getHeight()
+                + gridPane.getBoundsInLocal().getHeight() + 60);
     }
 
     private void updateHeight() {
