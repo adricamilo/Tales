@@ -63,7 +63,7 @@ public class TalesAntiguo extends Application {
         });
 
         slThalesValue.setMin(1);
-        slThalesValue.setMax(15);
+        slThalesValue.setMax(23);
         slThalesValue.setShowTickMarks(true);
         slThalesValue.setSnapToTicks(true);
         slThalesValue.setMajorTickUnit(1);
@@ -71,7 +71,7 @@ public class TalesAntiguo extends Application {
         slThalesValue.setValue(1);
 
         slHeightValue.minProperty().bind(slThalesValue.valueProperty());
-        slHeightValue.setMax(15);
+        slHeightValue.setMax(23);
         slHeightValue.setShowTickMarks(true);
         slHeightValue.setSnapToTicks(true);
         slHeightValue.setMajorTickUnit(1);
